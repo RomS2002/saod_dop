@@ -8,6 +8,19 @@ using namespace std;
 
 extern bool isRunning;
 
+struct Point
+{
+	double x;
+	double y;
+};
+
+struct Triangle
+{
+	Point A;
+	Point B;
+	Point C;
+};
+
 //Поиск количества путей в графе
 void findPathCount();
 
@@ -19,3 +32,12 @@ void segmentsTask();
 
 //Вывод: 1 - отрезки пересекаются; 0 - отрезки не пересекаются
 int isIntersected(double x1, double y1, double x2, double y2);
+
+//Задача про треугольник и точку
+void triangleAndPoint();
+
+//Вывод: 1 - точка лежит внутри треугольника, 0 - на границе треугольника, -1 - вне треугольника
+int triangleAndPointFunc(Triangle trgl, Point P);
+
+//Векторное (косое) произведение векторов
+double vect(double x1, double y1, double x2, double y2);
