@@ -53,3 +53,22 @@ int findPathRec(int** matrix, int size, int cur, int to, int cur_len, int max_le
 		}
 	return pathCount;
 }
+
+void segmentsTask()
+{
+	double x1, y1, x2, y2;
+	cout << "Введите координаты первого отрезка:\n> ";
+	cin >> x1 >> y1;
+	cout << "Введите координаты второго отрезка:\n> ";
+	cin >> x2 >> y2;
+	int result = isIntersected(x1, y1, x2, y2);
+	if (result == 1)
+		cout << "Отрезки пересекаются!\n";
+	else
+		cout << "Отрезки не пересекаются!\n";
+}
+
+int isIntersected(double x1, double y1, double x2, double y2)
+{
+	return 0;
+}

@@ -11,21 +11,26 @@ int main()
 	while (isRunning)
 	{
 		cout << "Дополнительные задачи САОД\n========================================\n";
-		cout << "Выберите действие:\n1) Поиск количества путей в графе;\n2) Выход;\n\n> ";
+		cout << "Выберите действие:\n1) Поиск количества путей в графе;\n2) Определение пересечения отрезков;\n3) Выход;\n\n> ";
 		cin >> choise;
+
+		system("cls");
+
 		switch (choise)
 		{
-		case 1:
-			system("cls");
+		case 1:		
 			findPathCount();
-			system("cls");
 			break;
 		case 2:
+			
+		case 3:
 			isRunning = false;
 			break;
 		default:
 			break;
 		}
+
+		system("cls");
 	}
 	return 0;
 }
