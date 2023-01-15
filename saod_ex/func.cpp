@@ -5,7 +5,7 @@ void findPathCount()
 	ifstream file("data.txt");
 	if (!file.is_open())
 	{
-		cout << "Îøèáêà îòêðûòèÿ ôàéëà!\n";
+		cout << "ÑœÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Â¤ Ñ„Ð°Ð¹Ð»Ð°!\n";
 		system("pause");
 		return;
 	}
@@ -21,17 +21,17 @@ void findPathCount()
 	}
 
 	int v_i, v_j, k;
-	cout << "Ââåäèòå íà÷àëüíóþ âåðøèíó:\n> ";
+	cout << "Â¬Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½ÑƒÑŽ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñƒ:\n> ";
 	cin >> v_i;
-	cout << "Ââåäèòå êîíå÷íóþ âåðøèíó:\n> ";
+	cout << "Â¬Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð½ÐµÑ‡Ð½ÑƒÑŽ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñƒ:\n> ";
 	cin >> v_j;
-	cout << "Ââåäèòå ìàêñèìàëüíóþ äëèíó ïóòè:\n> ";
+	cout << "Â¬Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½ÑƒÑŽ Ð´Ð»Ð¸Ð½Ñƒ Ð¿ÑƒÑ‚Ð¸:\n> ";
 	cin >> k;
 	
 	int len = 0;
 	int count = findPathRec(graph_matrix, size, v_i, v_j, len, k);
 
-	cout << "×èñëî ïóòåé èç " << v_i << " â " << v_j << ", äëèíîé, íå ïðåâîñõîäÿùèõ " << k << ": " << count << "\n";
+	cout << "â€žÐ¸ÑÐ»Ð¾ Ð¿ÑƒÑ‚ÐµÐ¹ Ð¸Ð· " << v_i << " Ð² " << v_j << ", Ð´Ð»Ð¸Ð½Ð¾Ð¹, Ð½Ðµ Ð¿Ñ€ÐµÐ²Ð¾ÑÑ…Ð¾Ð´Â¤Ñ‰Ð¸Ñ… " << k << ": " << count << "\n";
 	system("pause");
 
 	file.close();
@@ -57,15 +57,15 @@ int findPathRec(int** matrix, int size, int cur, int to, int cur_len, int max_le
 void segmentsTask()
 {
 	double x1, y1, x2, y2;
-	cout << "Ââåäèòå êîîðäèíàòû ïåðâîãî îòðåçêà:\n> ";
+	cout << "Â¬Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ Ð¾Ñ‚Ñ€ÐµÐ·ÐºÐ°:\n> ";
 	cin >> x1 >> y1;
-	cout << "Ââåäèòå êîîðäèíàòû âòîðîãî îòðåçêà:\n> ";
+	cout << "Â¬Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹ Ð²Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ Ð¾Ñ‚Ñ€ÐµÐ·ÐºÐ°:\n> ";
 	cin >> x2 >> y2;
 	int result = isIntersected(x1, y1, x2, y2);
 	if (result == 1)
-		cout << "Îòðåçêè ïåðåñåêàþòñÿ!\n";
+		cout << "ÑœÑ‚Ñ€ÐµÐ·ÐºÐ¸ Ð¿ÐµÑ€ÐµÑÐµÐºÐ°ÑŽÑ‚ÑÂ¤!\n";
 	else
-		cout << "Îòðåçêè íå ïåðåñåêàþòñÿ!\n";
+		cout << "ÑœÑ‚Ñ€ÐµÐ·ÐºÐ¸ Ð½Ðµ Ð¿ÐµÑ€ÐµÑÐµÐºÐ°ÑŽÑ‚ÑÂ¤!\n";
 }
 
 int isIntersected(double x1, double y1, double x2, double y2)
