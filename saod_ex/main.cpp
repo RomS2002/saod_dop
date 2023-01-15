@@ -22,7 +22,7 @@ int main()
 			findPathCount();
 			break;
 		case 2:
-			
+			segmentsTask();
 		case 3:
 			isRunning = false;
 			break;
