@@ -2,8 +2,7 @@
 
 int main()
 {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+	setlocale(LC_ALL, "ru_RU.UTF-8");
 
 	bool isRunning = true;
 	int choise;
