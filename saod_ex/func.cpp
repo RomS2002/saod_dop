@@ -117,12 +117,12 @@ int findPathRec(int** matrix, int size, int cur, int to, int cur_len, int max_le
 
 void segmentsTask()
 {
-	double x1, y1, x2, y2;
-	cout << "Введите координаты первого отрезка:\n> ";
-	cin >> x1 >> y1;
+	Point A1, A2, B1, B2;
+	cout << "Введите координаты первого отрезка (x1, y1, x2, y2):\n> ";
+	cin >> A1.x >> A1.y >> A2.x >> A2.y;
 	cout << "Введите координаты второго отрезка:\n> ";
-	cin >> x2 >> y2;
-	int result = isIntersected(x1, y1, x2, y2);
+	cin >> B1.x >> B1.y >> B2.x >> B2.y;
+	int result = isIntersected(A1, A2, B1, B2);
 	if (result == 1)
 		cout << "Отрезки пересекаются!\n";
 	else
@@ -130,8 +130,16 @@ void segmentsTask()
 	system("pause");
 }
 
-int isIntersected(double x1, double y1, double x2, double y2)
+int isIntersected(Point A1, Point A2, Point B1, Point B2)
 {
+	double d1 = vect(A2.x - A1.x, A2.y - A1.y, B1.x - A1.x, B1.y - A1.y);
+	double d2 = vect(A2.x - A1.x, A2.y - A1.y, B2.x - A1.x, B2.y - A1.y);
+	double d3 = vect(B2.x - B1.x, B2.y - B1.y, A1.x - B1.x, A1.y - B1.y);
+	double d4 = vect(B2.x - B1.x, B2.y - B1.y, A2.x - B1.x, A2.y - B1.y);
+
+	if (((d1 > 0) && (d2 < 0)) || ((d1 < 0) && (d2 > 0)))
+		if (((d3 > 0) && (d4 < 0)) || ((d3 < 0) && (d4 > 0)))
+			return 1;
 	return 0;
 }
 

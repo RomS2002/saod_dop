@@ -22,6 +22,7 @@ int main()
 			break;
 		case 2:
 			segmentsTask();
+			break;
 		case 3:
 			triangleAndPoint();
 			break;

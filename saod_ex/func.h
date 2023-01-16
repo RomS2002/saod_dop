@@ -37,7 +37,7 @@ int findPathRec(int** matrix, int size, int cur, int to, int cur_len, int max_le
 void segmentsTask();
 
 //Вывод: 1 - отрезки пересекаются; 0 - отрезки не пересекаются
-int isIntersected(double x1, double y1, double x2, double y2);
+int isIntersected(Point A1, Point A2, Point B1, Point B2);
 
 //Задача про треугольник и точку
 void triangleAndPoint();
