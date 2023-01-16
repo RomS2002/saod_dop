@@ -21,6 +21,12 @@ struct Triangle
 	Point C;
 };
 
+//Рекурсивный DFS для задания на связность 1 - одна компонента, 0 - разные компонетны 
+int dfsForTask4(int** graph_matrix, int size, bool* checked, int cur_v, int dest_v);
+
+//Задача на связность
+void connectivityTask();
+
 //Поиск количества путей в графе
 void findPathCount();
 

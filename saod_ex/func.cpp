@@ -1,5 +1,66 @@
 #include "func.h"
 
+int dfsForTask4(int** graph_matrix, int size, bool* checked, int cur_v, int dest_v)
+{
+	bool result = false;
+
+	checked[cur_v] = true;
+	for(int i = 0; i < size; i++)
+	{
+		if (graph_matrix[cur_v][i] > 0 && !checked[i])
+		{
+			if (i == dest_v)
+				return 1;
+			result = result || dfsForTask4(graph_matrix, size, checked, i, dest_v);
+		}
+	}
+	return int(result);
+}
+
+void connectivityTask()
+{
+	ifstream file("data2.txt");
+	if (!file.is_open())
+	{
+		cout << "Ошибка открытия файла!\n";
+		system("pause");
+		return;
+	}
+	int size;
+	file >> size;
+
+	int** graph_matrix = new int* [size];
+	for (int i = 0; i < size; i++)
+	{
+		graph_matrix[i] = new int[size];
+		for (int j = 0; j < size; j++)
+			file >> graph_matrix[i][j];
+	}
+
+	int u, v;
+	cout << "Введите первую вершину:\n> ";
+	cin >> u;
+	cout << "Введите вторую вершину:\n> ";
+	cin >> v;
+
+	bool* checked = new bool[size];
+	for (int i = 0; i < size; i++)
+		checked[i] = false;
+	int result = dfsForTask4(graph_matrix, size, checked, u, v);
+
+	if (result == 1)
+		cout << "Вершины принадлежат одной компоненте связности!\n";
+	else
+		cout << "Вершины НЕ принадлежат одной компоненте связности!\n";
+
+	system("pause");
+
+	file.close();
+	for (int i = 0; i < size; i++)
+		delete[] graph_matrix[i];
+	delete[] graph_matrix;
+}
+
 void findPathCount()
 {
 	ifstream file("data.txt");
